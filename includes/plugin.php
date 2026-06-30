@@ -2,8 +2,6 @@
 
 namespace Hero_Section_Wizard;
 
-use Hero_Section_Wizard;
-
 /**
  * Prevent direct access
  */
@@ -127,12 +125,12 @@ final class Plugin
      */
     public function update_plugin_action_links(array $links)
     {
-        $url = get_admin_url() . "admin.php?page=xynity-blocks&path=settings";
+        $url = get_admin_url() . "admin.php?page=" . HERO_SECTION_WIZARD_TEXT_DOMAIN . "&path=settings";
         $settings_link =
             '<a href="' .
             $url .
             '">' .
-            _e("Settings", HERO_SECTION_WIZARD_TEXT_DOMAIN) .
+            __("Settings", HERO_SECTION_WIZARD_TEXT_DOMAIN) .
             "</a>";
         // Add settings link as first link
         array_unshift($links, $settings_link);
