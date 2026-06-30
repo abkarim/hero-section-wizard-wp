@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name:         Hero Section Wizard
- * Plugin URI: 
+ * Plugin URI:          https://github.com/abkarim/hero-section-wizard-wp 
  * Description:         A block based hero section designer
  * Version:             0.1.0
  * Requires at least:   6.0
