@@ -26,10 +26,6 @@ if (!defined("ABSPATH")) {
 if (!class_exists("Hero_Section_Wizard")) {
     class Hero_Section_Wizard
     {
-
-        /**
-         * Constructor
-         */
         public function __construct()
         {
             $this->define_constants();
@@ -62,11 +58,6 @@ if (!class_exists("Hero_Section_Wizard")) {
             ]);
 
             /**
-             * Handle update 
-             */
-            add_action('admin_init', [$this, 'handle_update']);
-
-            /**
              * Load plugin
              */
             add_action("plugins_loaded", [$this, "init"]);
@@ -82,9 +73,7 @@ if (!class_exists("Hero_Section_Wizard")) {
          * Define constant
          * required in plugin
          *
-         * @access private
-         * @since 0.1.4
-         * @return void
+         * @since 0.1.0
          */
         private function define_constants(): void
         {
@@ -99,7 +88,7 @@ if (!class_exists("Hero_Section_Wizard")) {
              * Get plugin data from header
              * @var array
              */
-            $plugin_data = get_plugin_data(__FILE__);
+            $plugin_data = get_plugin_data(__FILE__, false, false);
 
             /**
              * Required php version for this plugin
@@ -221,9 +210,7 @@ if (!class_exists("Hero_Section_Wizard")) {
          *
          * Called by plugins_loaded hook
          *
-         * @access public
          * @since 0.1.0
-         * @return void
          */
         public function init(): void
         {
@@ -284,14 +271,6 @@ if (!class_exists("Hero_Section_Wizard")) {
                         ", you have $wp_version"
                 );
             }
-
-            /**
-             * This plugin is made for block theme
-             * check if current theme is block based or not
-             */
-            if (!wp_is_block_theme()) {
-                throw new Exception("Please use a block theme");
-            }
         }
 
         /**
@@ -307,14 +286,6 @@ if (!class_exists("Hero_Section_Wizard")) {
         {
             try {
                 $this->is_compatible();
-
-                /**
-                 * Manage database configuration
-                 *
-                 * @since 0.1.4
-                 */
-                require_once HERO_SECTION_WIZARD_DIR . "includes/classes/DB.php";
-                \Hero_Section_Wizard\DB::update_tables_if_necessary();
             } catch (Exception $e) {
                 if (isset($_GET["activate"])) {
                     unset($_GET["activate"]);

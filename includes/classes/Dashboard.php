@@ -15,7 +15,6 @@ class Dashboard
      * Constructor
      *
      * @since 0.1.0
-     * @access public
      */
     public function __construct()
     {
@@ -48,10 +47,7 @@ class Dashboard
      * @access private
      * @since 0.1.0
      */
-    private function init()
-    {
-        new CustomFiles();
-    }
+    private function init() {}
 
     /**
      * Add menu in wordpress dashboard
@@ -74,34 +70,6 @@ class Dashboard
             [$this, "render_element_cb"],
             null,
             30
-        );
-
-        /**
-         * Add customization submenu
-         *
-         * @since 0.2.4
-         */
-        add_submenu_page(
-            HERO_SECTION_WIZARD_NAME,
-            "Customization",
-            "Customization",
-            "manage_options",
-            HERO_SECTION_WIZARD_TEXT_DOMAIN . "&path=customization",
-            [$this, "render_element_cb"]
-        );
-
-        /**
-         * Add Blocks submenu
-         *
-         * @since 0.1.0
-         */
-        add_submenu_page(
-            HERO_SECTION_WIZARD_TEXT_DOMAIN,
-            "Blocks",
-            "Blocks",
-            "manage_options",
-            HERO_SECTION_WIZARD_TEXT_DOMAIN . "&path=blocks",
-            [$this, "render_element_cb"]
         );
     }
 

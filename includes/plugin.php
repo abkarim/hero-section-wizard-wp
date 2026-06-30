@@ -132,7 +132,7 @@ final class Plugin
             '<a href="' .
             $url .
             '">' .
-            __("Settings", HERO_SECTION_WIZARD_TEXT_DOMAIN) .
+            _e("Settings", HERO_SECTION_WIZARD_TEXT_DOMAIN) .
             "</a>";
         // Add settings link as first link
         array_unshift($links, $settings_link);
@@ -161,8 +161,5 @@ final class Plugin
 
         // Handle AJAX
         new AJAX();
-
-        // handle custom files
-        CustomFiles::load_custom_files();
     }
 }
