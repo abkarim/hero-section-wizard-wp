@@ -9,11 +9,7 @@ if (!defined("ABSPATH")) {
     exit();
 }
 
-require_once HERO_SECTION_WIZARD_PATH . "includes/classes/Dashboard.php";
-require_once HERO_SECTION_WIZARD_PATH . "includes/classes/AJAX.php";
 require_once HERO_SECTION_WIZARD_PATH . "includes/classes/Util.php";
-require_once HERO_SECTION_WIZARD_PATH . "includes/classes/DB.php";
-require_once HERO_SECTION_WIZARD_PATH . "includes/Supports.php";
 
 final class Plugin
 {
@@ -116,26 +112,6 @@ final class Plugin
 <?php
     }
 
-    /**
-     * Update plugin action links
-     *
-     * Called by filter hook from this->init function
-     *
-     * @since 0.1.0
-     */
-    public function update_plugin_action_links(array $links)
-    {
-        $url = get_admin_url() . "admin.php?page=" . HERO_SECTION_WIZARD_TEXT_DOMAIN . "&path=settings";
-        $settings_link =
-            '<a href="' .
-            $url .
-            '">' .
-            __("Settings", HERO_SECTION_WIZARD_TEXT_DOMAIN) .
-            "</a>";
-        // Add settings link as first link
-        array_unshift($links, $settings_link);
-        return $links;
-    }
 
     /**
      * Initialize function
@@ -143,21 +119,5 @@ final class Plugin
      * @since 0.1.0
      * @access public
      */
-    public function init()
-    {
-        // Update action links in plugin page
-        add_filter("plugin_action_links_" . HERO_SECTION_WIZARD_BASENAME, [
-            $this,
-            "update_plugin_action_links",
-        ]);
-
-        // Handle supports
-        new Supports();
-
-        // Handle menu options
-        new Dashboard();
-
-        // Handle AJAX
-        new AJAX();
-    }
+    public function init() {}
 }
