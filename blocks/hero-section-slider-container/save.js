@@ -1,11 +1,19 @@
 import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
 
-export default function save({ innerBlocks }) {
+export default function save({ innerBlocks, attributes }) {
+    const { borderRadius } = attributes;
     const slideCount = innerBlocks ? innerBlocks.length : 0;
 
+    const blockProps = useBlockProps.save({
+        style: {
+            "--hero-section-slider-container-border-radius":
+                borderRadius + "px",
+        },
+    });
+
     return (
-        <section {...useBlockProps.save()}>
-            <div className="slider-wrapper">
+        <section {...blockProps}>
+            <div className="slider-wrapper" data-active-slide-index="0">
                 <InnerBlocks.Content />
             </div>
 
@@ -14,7 +22,6 @@ export default function save({ innerBlocks }) {
                     {Array.from({ length: slideCount }).map((_, index) => (
                         <span
                             key={index}
-                            // Add active to the first slide dot as your starting layout
                             className={`control ${index === 0 ? "active" : ""}`}
                         />
                     ))}

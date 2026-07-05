@@ -14,6 +14,12 @@
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"borderRadius": {
+			"type": "number",
+			"default": 0
+		}
+	},
 	"textdomain": "hero-section-wizard",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
