@@ -21,7 +21,7 @@
         display: flex;
         gap: 0.3em;
         border-radius: 0.7em;
-        background-color: #9f9f9f;
+        background-color: rgba(45, 44, 44, 0.7);
         padding: 0.4em;
         bottom: 5%;
         left: 50%;
@@ -31,11 +31,11 @@
             width: 0.55em;
             height: 0.55em;
             border-radius: 100%;
-            background-color: #000;
+            background-color: rgba(0, 0, 0, 0.7);
             cursor: pointer;
 
             &.active {
-                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.7);
             }
         }
     }
