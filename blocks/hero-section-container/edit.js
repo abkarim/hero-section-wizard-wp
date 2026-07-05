@@ -1,38 +1,48 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
+import {
+    InnerBlocks,
+    InspectorControls,
+    useBlockProps,
+} from "@wordpress/block-editor";
+import { PanelBody, RangeControl } from "@wordpress/components";
+import "./editor.scss";
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
+export default function Edit({ attributes, setAttributes }) {
+    const { gap } = attributes;
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.scss';
+    const blockProps = useBlockProps({
+        style: {
+            "--hero-section-container-gap": gap + "em",
+        },
+    });
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
-export default function Edit() {
-	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Hero Section Container – hello from the editor!', 'hero-section-container' ) }
-		</p>
-	);
+    const TEMPLATE = [
+        [
+            "hero-section-wizard/hero-section-slider-container",
+            { className: "slider-container" },
+        ],
+        [
+            "hero-section-wizard/hero-section-products-container",
+            { className: "products-container" },
+        ],
+    ];
+
+    return (
+        <>
+            <InspectorControls>
+                <PanelBody title="Slider Settings" initialOpen={true}>
+                    <RangeControl
+                        label="Gap (em)"
+                        value={gap || 1}
+                        onChange={(value) => setAttributes({ gap: value })}
+                        min={0}
+                        max={100}
+                        step={0.2}
+                    />
+                </PanelBody>
+            </InspectorControls>
+            <section {...blockProps}>
+                <InnerBlocks template={TEMPLATE} templateLock="all" />
+            </section>
+        </>
+    );
 }

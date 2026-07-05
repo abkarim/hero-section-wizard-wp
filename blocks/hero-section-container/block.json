@@ -9,7 +9,32 @@
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"background": true,
+			"text": false
+		},
+		"dimensions": {
+			"height": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": false
+		}
+	},
+	"attributes": {
+		"style": {
+			"type": "object",
+			"default": {
+				"dimensions": {
+					"height": "60vh"
+				}
+			}
+		},
+		"gap": {
+			"type": "number",
+			"default": "1"
+		}
 	},
 	"textdomain": "hero-section-wizard",
 	"editorScript": "file:./index.js",

@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "hero-section-wizard/hero-section-slider-container",
+	"version": "0.1.0",
+	"title": "Hero Section Slider Container",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Hero Section Slider Container block for Hero Section Wizard plugin.",
+	"example": {},
+	"allowedBlocks": [
+		"hero-section-wizard/hero-section-slider-child"
+	],
+	"supports": {
+		"html": false
+	},
+	"textdomain": "hero-section-wizard",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

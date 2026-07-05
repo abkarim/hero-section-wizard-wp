@@ -1,9 +1,8 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
-.wp-block-create-block-hero-section-container {
-	border: 1px dotted #f00;
+.wp-block-hero-section-wizard-hero-section-container {
+    & > .block-editor-inner-blocks > .block-editor-block-list__layout {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: var(--hero-section-container-gap);
+    }
 }

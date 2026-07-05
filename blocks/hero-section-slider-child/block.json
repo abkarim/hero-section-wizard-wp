@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "hero-section-wizard/hero-section-slider-child",
+	"version": "0.1.0",
+	"title": "Hero Section Slider Child",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Hero Section Slider Child block for Hero Section Wizard plugin.",
+	"example": {},
+	"parent": [
+		"hero-section-wizard/hero-section-slider-container"
+	],
+	"supports": {
+		"html": false,
+		"background": {
+			"backgroundImage": true
+		},
+		"spacing": {
+			"padding": [
+				"top",
+				"right",
+				"bottom",
+				"left"
+			]
+		}
+	},
+	"attributes": {
+		"style": {
+			"type": "object",
+			"default": {
+				"background": {
+					"backgroundImage": {
+						"source": "file",
+						"url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+					}
+				},
+				"spacing": {
+					"padding": {
+						"top": "5px",
+						"right": "5px",
+						"bottom": "5px",
+						"left": "5px"
+					}
+				}
+			}
+		}
+	},
+	"textdomain": "hero-section-wizard",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

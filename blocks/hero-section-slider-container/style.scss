@@ -1,0 +1,36 @@
+.wp-block-hero-section-wizard-hero-section-slider-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .slider-wrapper {
+        height: 100%;
+        display: flex;
+    }
+
+    .controls {
+        margin-block: auto;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        gap: 0.3em;
+        border-radius: 0.7em;
+        background-color: #9f9f9f;
+        padding: 0.4em;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .control {
+            width: 0.55em;
+            height: 0.55em;
+            border-radius: 100%;
+            background-color: #000;
+            cursor: pointer;
+
+            &.active {
+                background-color: #fff;
+            }
+        }
+    }
+}

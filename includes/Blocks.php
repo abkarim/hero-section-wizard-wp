@@ -14,21 +14,6 @@ class Blocks
 {
 
     /**
-     * Block prefix
-     * @var string
-     * @access protected
-     */
-    protected $_blocks_prefix = "xynity-blocks";
-
-    /**
-     * Blocks list
-     * @var array
-     */
-    public $_blocks_list = [
-        "hero-section-container",
-    ];
-
-    /**
      * Constructor
      * 
      * @since 0.1.0
@@ -63,8 +48,11 @@ class Blocks
      */
     protected function register_blocks(): void
     {
-        foreach ($this->_blocks_list as $block) {
-            register_block_type(HERO_SECTION_WIZARD_DIR . 'build/' . $block);
+
+        $blocks = glob(HERO_SECTION_WIZARD_DIR . 'build/*', GLOB_ONLYDIR);
+
+        foreach ($blocks as $block_dir) {
+            register_block_type($block_dir);
         }
     }
 }
