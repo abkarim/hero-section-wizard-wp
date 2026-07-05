@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "hero-section-wizard/hero-section-slider-child",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"title": "Hero Section Slider Child",
 	"category": "widgets",
 	"icon": "smiley",
@@ -14,15 +14,15 @@
 	"supports": {
 		"html": false,
 		"background": {
-			"backgroundImage": true
+			"backgroundImage": true,
+			"gradient": true
+		},
+		"color": {
+			"background": true,
+			"text": false
 		},
 		"spacing": {
-			"padding": [
-				"top",
-				"right",
-				"bottom",
-				"left"
-			]
+			"padding": true
 		}
 	},
 	"attributes": {
@@ -37,10 +37,10 @@
 				},
 				"spacing": {
 					"padding": {
-						"top": "5px",
-						"right": "5px",
-						"bottom": "5px",
-						"left": "5px"
+						"top": "1em",
+						"right": "1em",
+						"bottom": "1em",
+						"left": "1em"
 					}
 				}
 			}
@@ -49,6 +49,5 @@
 	"textdomain": "hero-section-wizard",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"style": "file:./style-index.css"
 }
