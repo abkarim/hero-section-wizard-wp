@@ -1,17 +1,21 @@
 @mixin layout {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: var(--hero-section-secondary-container-gap, 0);
 
-    & > .wp-block-hero-section-wizard-hero-section-secondary-child {
-        &:nth-child(1) {
-            grid-column: span 2 / span 2;
-        }
-        &:nth-child(2),
-        &:nth-child(3) {
-            grid-row-start: 2;
+    @media (min-width: 769px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        & > .wp-block-hero-section-wizard-hero-section-secondary-child {
+            &:nth-child(1) {
+                grid-column: span 2 / span 2;
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+                grid-row-start: 2;
+            }
         }
     }
 }

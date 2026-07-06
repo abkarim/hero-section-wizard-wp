@@ -1,6 +1,9 @@
 .wp-block-hero-section-wizard-hero-section-container {
     display: flex;
-    justify-content: space-between;
     align-items: stretch;
     gap: var(--hero-section-container-gap);
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+    }
 }
