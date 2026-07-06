@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "hero-section-wizard/hero-section-secondary-child",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"title": "Hero Section Secondary Child",
 	"category": "widgets",
 	"icon": "smiley",
@@ -12,11 +12,41 @@
 		"hero-section-wizard/hero-section-secondary-container"
 	],
 	"supports": {
-		"html": false
+		"html": false,
+		"background": {
+			"backgroundImage": true
+		},
+		"color": {
+			"background": true,
+			"text": false
+		},
+		"spacing": {
+			"padding": true
+		}
+	},
+	"attributes": {
+		"style": {
+			"type": "object",
+			"default": {
+				"background": {
+					"backgroundImage": {
+						"src": "file",
+						"url": "https://images.unsplash.com/photo-1609081219090-a6d81d3085bf"
+					}
+				},
+				"spacing": {
+					"padding": {
+						"top": "1em",
+						"right": "1em",
+						"bottom": "1em",
+						"left": "1em"
+					}
+				}
+			}
+		}
 	},
 	"textdomain": "hero-section-wizard",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"style": "file:./style-index.css"
 }

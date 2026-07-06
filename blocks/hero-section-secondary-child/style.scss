@@ -1,12 +1,10 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.wp-block-hero-section-wizard-hero-section-secondary-child {
+    transition: background-size 0.5s ease-in-out;
+    border-radius: var(--hero-section-secondary-container-border-radius, 0);
+    background-position: center center;
+    background-size: 100% !important;
 
-.wp-block-hero-section-wizard-hero-section-products-child {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+    &:hover {
+        background-size: 107% !important;
+    }
 }

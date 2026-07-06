@@ -1,9 +1,19 @@
-import { useBlockProps } from "@wordpress/block-editor";
+import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
 
-export default function save() {
+export default function save({ attributes }) {
+    const { borderRadius, gap } = attributes;
+
+    const blockProps = useBlockProps.save({
+        style: {
+            "--hero-section-secondary-container-border-radius":
+                borderRadius + "px",
+            "--hero-section-secondary-container-gap": gap + "em",
+        },
+    });
+
     return (
-        <section {...useBlockProps.save()}>
-            {"Hero Section Products Container – hello from the saved content!"}
+        <section {...blockProps}>
+            <InnerBlocks.Content />
         </section>
     );
 }

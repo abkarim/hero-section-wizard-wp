@@ -1,2 +1,7 @@
-.wp-block-hero-section-wizard-hero-section-products-container {
+@import "style.scss";
+
+.wp-block-hero-section-wizard-hero-section-secondary-container {
+    & > .block-editor-inner-blocks > .block-editor-block-list__layout {
+        @include layout;
+    }
 }
