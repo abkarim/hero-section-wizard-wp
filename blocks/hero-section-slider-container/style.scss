@@ -3,6 +3,7 @@
     position: relative;
     overflow: hidden;
     border-radius: var(--hero-section-slider-container-border-radius, 0px);
+    aspect-ratio: 4/1;
 
     .slider-wrapper {
         height: 100%;
