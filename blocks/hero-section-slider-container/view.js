@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function setDraggingSlideStateTransformValue(value) {
-        console.log({ value });
         if (value !== "") {
             heroSectionSliderContainer.style.setProperty(
                 "--hero-section-slider-container-dragging-transform-value",
