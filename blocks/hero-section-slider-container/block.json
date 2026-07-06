@@ -11,6 +11,9 @@
 	"allowedBlocks": [
 		"hero-section-wizard/hero-section-slider-child"
 	],
+	"parent": [
+		"hero-section-wizard/hero-section-container"
+	],
 	"supports": {
 		"html": false
 	},

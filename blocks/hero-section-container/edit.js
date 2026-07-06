@@ -21,7 +21,7 @@ export default function Edit({ attributes, setAttributes }) {
             { className: "slider-container" },
         ],
         [
-            "hero-section-wizard/hero-section-products-container",
+            "hero-section-wizard/hero-section-secondary-container",
             { className: "products-container" },
         ],
     ];

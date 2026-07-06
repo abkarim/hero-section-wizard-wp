@@ -1,13 +1,16 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "hero-section-wizard/hero-section-products-container",
+	"name": "hero-section-wizard/hero-section-secondary-child",
 	"version": "0.1.0",
-	"title": "Hero Section Products Container",
+	"title": "Hero Section Secondary Child",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Secondary Child for hero section wizard",
 	"example": {},
+	"parent": [
+		"hero-section-wizard/hero-section-secondary-container"
+	],
 	"supports": {
 		"html": false
 	},
