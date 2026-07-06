@@ -13,6 +13,12 @@
             translateX(0%)
         );
         cursor: grab;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* Older IE/Edge */
+        user-select: none; /* Standard */
+
+        /* Optional: Prevents images from being dragged/ghosted by the browser */
+        -webkit-user-drag: none;
 
         &.dragging {
             cursor: grabbing;
