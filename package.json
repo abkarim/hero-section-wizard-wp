@@ -17,9 +17,11 @@
   "scripts": {
     "start": "wp-scripts start --webpack-src-dir=blocks",
     "build": "wp-scripts build --webpack-src-dir=blocks",
-    "create-block": "cd blocks && npx @wordpress/create-block@latest $npm_config_name --no-plugin --namespace=\"hero-section-wizard\" --textdomain=\"hero-section-wizard\" "
+    "create-block": "cd blocks && npx @wordpress/create-block@latest $npm_config_name --no-plugin --namespace=\"hero-section-wizard\" --textdomain=\"hero-section-wizard\" ",
+    "extract": "node extract.ts"
   },
   "devDependencies": {
+    "@types/node": "^20.19.43",
     "@wordpress/scripts": "^32.5.1"
   },
   "dependencies": {
