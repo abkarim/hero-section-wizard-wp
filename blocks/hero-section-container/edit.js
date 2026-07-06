@@ -22,7 +22,7 @@ export default function Edit({ attributes, setAttributes }) {
         ],
         [
             "hero-section-wizard/hero-section-secondary-container",
-            { className: "products-container" },
+            { className: "secondary-container" },
         ],
     ];
 
