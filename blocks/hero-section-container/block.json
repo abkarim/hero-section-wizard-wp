@@ -19,7 +19,7 @@
 			"text": false
 		},
 		"dimensions": {
-			"height": true
+			"minHeight": true
 		},
 		"spacing": {
 			"margin": true,
@@ -31,7 +31,7 @@
 			"type": "object",
 			"default": {
 				"dimensions": {
-					"height": "60vh"
+					"minHeight": "60vh"
 				}
 			}
 		},
