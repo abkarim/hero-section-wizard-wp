@@ -7,11 +7,12 @@ import {
 import { useSelect } from "@wordpress/data";
 import { PanelBody, RangeControl } from "@wordpress/components";
 import "./editor.scss";
+import { useEffect } from "react";
 
 export default function Edit({ clientId, attributes, setAttributes }) {
     const TEMPLATE = [["hero-section-wizard/hero-section-slider-child", {}]];
 
-    const { borderRadius } = attributes;
+    const { borderRadius, slideCount } = attributes;
 
     const blockProps = useBlockProps({
         style: {
@@ -27,6 +28,12 @@ export default function Edit({ clientId, attributes, setAttributes }) {
         },
         [clientId],
     );
+
+    useEffect(() => {
+        if (innerBlocksCount !== slideCount) {
+            setAttributes({ slideCount: innerBlocksCount });
+        }
+    }, [innerBlocksCount, slideCount, setAttributes]);
 
     return (
         <>
@@ -54,18 +61,16 @@ export default function Edit({ clientId, attributes, setAttributes }) {
                         templateLock={false}
                     />
                 </div>
-                {innerBlocksCount > 0 && (
+                {slideCount > 0 && (
                     <div className="controls">
-                        {Array.from({ length: innerBlocksCount }).map(
-                            (_, index) => (
-                                <span
-                                    key={index}
-                                    className={`control ${
-                                        index === 0 ? "active" : ""
-                                    }`}
-                                />
-                            ),
-                        )}
+                        {Array.from({ length: slideCount }).map((_, index) => (
+                            <span
+                                key={index}
+                                className={`control ${
+                                    index === 0 ? "active" : ""
+                                }`}
+                            />
+                        ))}
                     </div>
                 )}
             </section>

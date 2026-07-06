@@ -1,8 +1,7 @@
 import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
 
-export default function save({ innerBlocks, attributes }) {
-    const { borderRadius } = attributes;
-    const slideCount = innerBlocks ? innerBlocks.length : 0;
+export default function save({ attributes }) {
+    const { borderRadius, slideCount } = attributes;
 
     const blockProps = useBlockProps.save({
         style: {

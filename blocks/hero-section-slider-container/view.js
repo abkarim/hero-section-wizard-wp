@@ -131,6 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (slideToBe !== null) {
             changeSlide(slideToBe);
         }
+
+        slideToBe = null;
     }
 
     sliderWrapper.addEventListener("pointerup", pointerCancel);
