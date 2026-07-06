@@ -5,6 +5,10 @@
     border-radius: var(--hero-section-slider-container-border-radius, 0px);
     aspect-ratio: 4/1;
 
+    @media (max-width: 1400px) {
+        min-height: 40vh;
+    }
+
     .slider-wrapper {
         height: 100%;
         display: flex;
