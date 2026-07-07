@@ -4,7 +4,7 @@
  * Plugin Name:         Hero Section Wizard
  * Plugin URI:          https://github.com/abkarim/hero-section-wizard-wp 
  * Description:         A block based hero section designer
- * Version:             0.1.0
+ * Version:             0.2.0
  * Requires at least:   6.0
  * Requires PHP:        8.0
  * License:             GPL-3.0 license
