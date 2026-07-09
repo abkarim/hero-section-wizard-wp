@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     gap: var(--hero-section-secondary-container-gap, 0);
 
-    & > .wp-block-hero-section-wizard-hero-section-secondary-child {
+    .wp-block-hero-section-wizard-hero-section-secondary-child {
         &:nth-child(1) {
             aspect-ratio: 7/3.5;
         }
@@ -16,7 +16,7 @@
     }
 
     @media (min-width: 769px) {
-        & > .wp-block-hero-section-wizard-hero-section-secondary-child {
+        .wp-block-hero-section-wizard-hero-section-secondary-child {
             height: calc(
                 100% - var(--hero-section-secondary-container-gap, 0px) / 2
             );

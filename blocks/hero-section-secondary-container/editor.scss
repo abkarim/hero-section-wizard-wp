@@ -1,7 +1,12 @@
 @import "style.scss";
 
 .wp-block-hero-section-wizard-hero-section-secondary-container {
-    & > .block-editor-inner-blocks > .block-editor-block-list__layout {
-        @include layout;
+    & > .block-editor-inner-blocks {
+        width: 100%;
+        height: 100%;
+
+        & > .block-editor-block-list__layout {
+            @include layout;
+        }
     }
 }
