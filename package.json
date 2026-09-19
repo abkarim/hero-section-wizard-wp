@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.19.43",
-    "@wordpress/scripts": "^34.0.0"
+    "@wordpress/scripts": "^34.2.0"
   },
   "dependencies": {
     "@wordpress/icons": "^15.1.0"
